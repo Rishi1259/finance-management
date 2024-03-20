@@ -1,0 +1,42 @@
+<div class="container">
+  <div class="mt-4" style="display: ruby-text;">
+      <mat-icon class="align-middle me-4" (click)="decrementdate()">keyboard_arrow_left</mat-icon>
+        <input class="form-control" type="date" id="dateDaily" name="dateDaily" style="width: 15%;" [(ngModel)]="selectedDate" (change)="dateChanged($event)">
+     
+      <mat-icon class="align-middle ms-4" (click)="incrementDate()">keyboard_arrow_right</mat-icon>
+  <table class="table mt-4">
+    <thead>
+      <tr>
+        <th class="col" scope="col">{{todayDate}}</th>
+        <th class="col" scope="col">Account</th>
+        <th class="col" scope="col">Amount</th>
+        <th class="col" scope="col">Note</th>
+        <th class="col-1" scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let transaction of transactions | dateFilter: targetDate; index as i">
+        <th scope="row" [ngClass]="{expensePurchase: this.transaction.transactionType == 'Expense', 
+                  expenseIncome: this.transaction.transactionType == 'Income',
+                  expenseInvestment: this.transaction.transactionType == 'Investment'}">{{transaction.purchase}}</th>
+        <td [ngClass]="{expensePurchase: this.transaction.transactionType == 'Expense', 
+            expenseIncome: this.transaction.transactionType == 'Income',
+            expenseInvestment: this.transaction.transactionType == 'Investment'}">{{transaction.account}}</td>
+        <td [ngClass]="{expensePurchase: this.transaction.transactionType == 'Expense', 
+            expenseIncome: this.transaction.transactionType == 'Income',
+            expenseInvestment: this.transaction.transactionType == 'Investment'}">{{transaction.amount}}</td>
+        <td [ngClass]="{expensePurchase: this.transaction.transactionType == 'Expense', 
+            expenseIncome: this.transaction.transactionType == 'Income',
+            expenseInvestment: this.transaction.transactionType == 'Investment'}">{{transaction.note}}</td>
+        <td>
+          <div class="row">
+            <span>
+              <a class="me-1">Edit</a>
+              <a class="ms-1" (click)="deleteTransaction(i)">Delete</a>
+            </span>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

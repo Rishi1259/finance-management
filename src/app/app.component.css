@@ -1,0 +1,4 @@
+.button-tab + .button-tab{
+    margin-left: 24px;
+    border-radius: 4px;
+}

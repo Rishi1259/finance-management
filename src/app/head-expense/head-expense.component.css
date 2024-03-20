@@ -1,0 +1,43 @@
+.income-head{
+    border-color: rgb(82, 150, 82);
+    border-radius: 4px;
+    background-color: rgb(82, 150, 82);
+}
+
+.income-head .title{
+    color: #fff;
+}
+
+.income-head .amount{
+    color: #fff;
+}
+
+
+.expense-head{
+    border-color: red;
+    border-radius: 4px;
+    background-color: red;
+}
+
+.expense-head .title{
+    color: #fff;
+}
+
+.expense-head .amount{
+    color: #fff;
+}
+
+
+.investment-head{
+    border-color: yellowgreen;
+    border-radius: 4px;
+    background-color: yellowgreen;
+}
+
+.investment-head .title{
+    color: #fff;
+}
+
+.investment-head .amount{
+    color: #fff;
+}
