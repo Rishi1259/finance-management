@@ -1,7 +1,7 @@
 <div class="container">
   <div class="mt-4" style="display: ruby-text;">
       <mat-icon class="align-middle me-4" (click)="decrementdate()">keyboard_arrow_left</mat-icon>
-        <input class="form-control" type="date" id="dateDaily" name="dateDaily" style="width: 15%;" [(ngModel)]="selectedDate" (change)="dateChanged($event)">
+        <input class="form-control" type="date" id="dateDaily" name="dateDaily" style="width: 15%;" [(ngModel)]="selectedDate" (change)="dateChanged($event)" [max]="formattedDate">
      
       <mat-icon class="align-middle ms-4" (click)="incrementDate()">keyboard_arrow_right</mat-icon>
   <table class="table mt-4">
